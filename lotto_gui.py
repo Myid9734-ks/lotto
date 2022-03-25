@@ -62,7 +62,7 @@ class WindowClass(QMainWindow, form_class):
     
         
     def odd_num(self): # 이전회차 불러오기
-        buttonReply = QMessageBox.question(self, '신중하게 결정', "500원?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        buttonReply = QMessageBox.question(self, '신중하게 결정', "500원?", QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
         if buttonReply == QMessageBox.No:
             QMessageBox.about(self, '경고!!!!','꺼져!!!')
         else :
@@ -177,6 +177,7 @@ class WindowClass(QMainWindow, form_class):
                 a = '{}번 : {}, {}, {}, {}, {}, {} '.format(count, i[0], i[1], i[2], i[3], i[4], i[5])
                 self.new_num.appendPlainText(a)
                 self.new_num.appendPlainText('--------------------------')
+                self.new_num.appendPlainText(' ')
                 count += 1
             self.check_btn.setEnabled(True)
             self.statusBar().showMessage(f"{count_num_text}회 생성완료")
